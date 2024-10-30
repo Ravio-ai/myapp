@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "40848576098",
+    "project_id": "social-media-e52bb",
+    "storage_bucket": "social-media-e52bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40848576098:android:958b6d822b063c47a40b3b",
+        "android_client_info": {
+          "package_name": "com.ravio.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeqyxyPB3RctQoIVwWtnjkSu3wICB3-UU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
