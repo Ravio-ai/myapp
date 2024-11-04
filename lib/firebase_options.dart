@@ -30,10 +30,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -47,29 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC7ADLUsGuTSNhLRgBLHLXHpH5DkXxRfLM',
-    appId: '1:40848576098:web:d81363113a873ddca40b3b',
-    messagingSenderId: '40848576098',
-    projectId: 'social-media-e52bb',
-    authDomain: 'social-media-e52bb.firebaseapp.com',
-    storageBucket: 'social-media-e52bb.appspot.com',
-    measurementId: 'G-X8WGJ5PQBJ',
+    apiKey: 'AIzaSyATSQQ3ITWNiqh93PsvlvmA2KNF0kPov5w',
+    appId: '1:398690684185:web:487e2e21e1a93f4fb70988',
+    messagingSenderId: '398690684185',
+    projectId: 'social-media-d67eb',
+    authDomain: 'social-media-d67eb.firebaseapp.com',
+    storageBucket: 'social-media-d67eb.firebasestorage.app',
+    measurementId: 'G-C8L30TQFFL',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCeqyxyPB3RctQoIVwWtnjkSu3wICB3-UU',
-    appId: '1:40848576098:android:958b6d822b063c47a40b3b',
-    messagingSenderId: '40848576098',
-    projectId: 'social-media-e52bb',
-    storageBucket: 'social-media-e52bb.appspot.com',
+    apiKey: 'AIzaSyCpBFN7PiNjDaRRG0oQuqOSYD0XSoA6_SI',
+    appId: '1:398690684185:android:2a58ccbdf9275dd3b70988',
+    messagingSenderId: '398690684185',
+    projectId: 'social-media-d67eb',
+    storageBucket: 'social-media-d67eb.firebasestorage.app',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBDRy1MZh7tKEq6CvjTWGKQTpNVTX_UlcU',
-    appId: '1:40848576098:ios:f7d3e7f081811070a40b3b',
-    messagingSenderId: '40848576098',
-    projectId: 'social-media-e52bb',
-    storageBucket: 'social-media-e52bb.appspot.com',
-    iosBundleId: 'com.ravio-social.app',
+    apiKey: 'AIzaSyCLkV7SgaJiDsa0xX7ECaa9HxUkVPjDphg',
+    appId: '1:398690684185:ios:97053ae260730c0fb70988',
+    messagingSenderId: '398690684185',
+    projectId: 'social-media-d67eb',
+    storageBucket: 'social-media-d67eb.firebasestorage.app',
+    iosBundleId: 'com.example.myapp',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyATSQQ3ITWNiqh93PsvlvmA2KNF0kPov5w',
+    appId: '1:398690684185:web:5ee03c18e9d6daa2b70988',
+    messagingSenderId: '398690684185',
+    projectId: 'social-media-d67eb',
+    authDomain: 'social-media-d67eb.firebaseapp.com',
+    storageBucket: 'social-media-d67eb.firebasestorage.app',
+    measurementId: 'G-KL8V47TM0N',
   );
 }

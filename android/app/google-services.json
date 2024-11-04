@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "40848576098",
-    "project_id": "social-media-e52bb",
-    "storage_bucket": "social-media-e52bb.appspot.com"
+    "project_number": "398690684185",
+    "project_id": "social-media-d67eb",
+    "storage_bucket": "social-media-d67eb.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:40848576098:android:958b6d822b063c47a40b3b",
+        "mobilesdk_app_id": "1:398690684185:android:2a58ccbdf9275dd3b70988",
         "android_client_info": {
           "package_name": "com.ravio.app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCeqyxyPB3RctQoIVwWtnjkSu3wICB3-UU"
+          "current_key": "AIzaSyCpBFN7PiNjDaRRG0oQuqOSYD0XSoA6_SI"
         }
       ],
       "services": {
