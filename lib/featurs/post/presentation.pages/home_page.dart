@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/featurs/auth/presentation/cubits/auth_cubit.dart';
+import 'package:myapp/featurs/post/presentation.pages/componenets/my_drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -22,6 +23,7 @@ class HomePage extends StatelessWidget {
       body: const Center(
         child: Text("Home"),
       ),
+      drawer: const MyDrawer(),
     );
   }
 }
