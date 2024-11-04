@@ -13,7 +13,7 @@ class MyDrawerTile extends StatelessWidget {
       title: Text(
         title,
         style: TextStyle(
-          color: Theme.of(context).colorScheme.inversePrimary,
+          color: Theme.of(context).colorScheme.primary,
         ),
       ),
       leading: Icon(
