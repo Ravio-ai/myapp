@@ -17,6 +17,11 @@ class MyTextField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hint,
+        hintStyle: TextStyle(
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        fillColor: Theme.of(context).colorScheme.secondary,
+        filled: true,
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: Theme.of(context).colorScheme.tertiary,

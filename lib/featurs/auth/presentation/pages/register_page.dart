@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:myapp/featurs/auth/presentation/componenets/my_button.dart';
 import 'package:myapp/featurs/auth/presentation/componenets/my_text_field.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+  final nameController = TextEditingController();
   final emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -31,11 +33,17 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 //Welcome back message
                 Text(
-                  "Welcome back you have been missed",
+                  "Let's create an account for you",
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                     fontSize: 16,
                   ),
+                ),
+                const SizedBox(height: 25),
+                MyTextField(
+                  controller: nameController,
+                  hint: "Name",
+                  obscureText: false,
                 ),
                 const SizedBox(height: 25),
                 //email textfield
@@ -50,16 +58,22 @@ class _LoginPageState extends State<LoginPage> {
                   hint: "Password",
                   obscureText: true,
                 ),
+                const SizedBox(height: 10),
+                MyTextField(
+                  controller: confirmPasswordController,
+                  hint: "Confirm Password",
+                  obscureText: true,
+                ),
                 const SizedBox(height: 25),
                 //Button
                 MyButton(
                   onTap: () {},
-                  text: "Login",
+                  text: "Register",
                 ),
                 const SizedBox(height: 50),
                 //register
                 Text(
-                  "Not registered yet? Register here",
+                  "Already Register? Login here",
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                   ),
