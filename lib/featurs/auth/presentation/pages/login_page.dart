@@ -27,6 +27,8 @@ class _LoginPageState extends State<LoginPage> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
+          backgroundColor: Colors.red,
+          showCloseIcon: true,
           content: Text("please enter email and password"),
         ),
       );
@@ -81,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 25),
                 //Button
                 MyButton(
-                  onTap: () {},
+                  onTap: login,
                   text: "Login",
                 ),
                 const SizedBox(height: 50),
