@@ -3,7 +3,8 @@ import 'package:myapp/featurs/auth/presentation/componenets/my_button.dart';
 import 'package:myapp/featurs/auth/presentation/componenets/my_text_field.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final void Function()? toggleScreen;
+  const LoginPage({super.key, this.toggleScreen});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -58,11 +59,27 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 50),
                 //register
-                Text(
-                  "Not registered yet? Register here",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Not registered yet?",
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                      onTap: widget.toggleScreen,
+                      child: Text(
+                        "Register here",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

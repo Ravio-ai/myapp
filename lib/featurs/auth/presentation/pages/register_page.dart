@@ -3,7 +3,8 @@ import 'package:myapp/featurs/auth/presentation/componenets/my_button.dart';
 import 'package:myapp/featurs/auth/presentation/componenets/my_text_field.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  final void Function() toggleScreen;
+  const RegisterPage({super.key, required this.toggleScreen});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -45,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   hint: "Name",
                   obscureText: false,
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 10),
                 //email textfield
                 MyTextField(
                   controller: emailController,
@@ -72,11 +73,27 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 const SizedBox(height: 50),
                 //register
-                Text(
-                  "Already Register? Login here",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Already Register?",
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                      onTap: widget.toggleScreen,
+                      child: Text(
+                        "Login Now",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
