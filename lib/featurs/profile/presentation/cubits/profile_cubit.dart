@@ -26,9 +26,11 @@ class ProfileCubit extends Cubit<ProfileState> {
     emit(ProfileLoading());
     try {
       final currentUser = await profileRepo.getProfileUser(uuid);
-      final updatedProfile = currentUser.copyWith(newBio: newBio);
+      final updatedProfile = currentUser?.copyWith(newBio: newBio);
       //update in repo
-      await profileRepo.updateProfileUser(updatedProfile);
+      await profileRepo.updateProfileUser(updatedProfile!);
+
+      await getProfileUser(uuid);
     } catch (e) {
       emit(ProfileError(message: e.toString()));
     }
