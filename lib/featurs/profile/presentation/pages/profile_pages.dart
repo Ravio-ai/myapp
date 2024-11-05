@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/featurs/auth/domain/entities/app_user.dart';
 import 'package:myapp/featurs/auth/presentation/cubits/auth_cubit.dart';
+import 'package:myapp/featurs/profile/presentation/componetets/bio_box.dart';
 import 'package:myapp/featurs/profile/presentation/cubits/profile_cubit.dart';
 import 'package:myapp/featurs/profile/presentation/cubits/profile_state.dart';
 
@@ -37,20 +38,22 @@ class _ProfilePageState extends State<ProfilePage> {
               title: Text(user.name),
               foregroundColor: Theme.of(context).colorScheme.primary,
             ),
-            body: Center(
-              child: Column(
-                children: [
-                  Text(
-                    user.email,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+            body: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Center(
+                child: Column(
+                  children: [
+                    Text(
+                      user.email,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  //Profile image
-                  Container(
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    //Profile image
+                    Container(
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.secondary,
                         borderRadius: BorderRadius.circular(12),
@@ -64,18 +67,22 @@ class _ProfilePageState extends State<ProfilePage> {
                           size: 72,
                           color: Theme.of(context).colorScheme.primary,
                         ),
-                      )),
-
-                  Text(
-                    user.bio,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                ],
+                    const SizedBox(height: 25),
+                    Row(
+                      children: [
+                        Text(
+                          "Bio",
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
+                      ],
+                    ),
+                    BioBox(text: user.bio)
+                  ],
+                ),
               ),
             ),
           );
