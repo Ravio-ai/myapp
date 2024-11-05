@@ -5,7 +5,7 @@ import 'package:myapp/featurs/profile/domain/repos/profile_repo.dart';
 class FirebaseProfileRepo implements ProfileRepo {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   @override
-  Future<ProfileUser?> getProfileUser(String uuid) async {
+  Future<ProfileUser?> fetchUserProfile(String uuid) async {
     try {
       final userDoc = await _firestore.collection('users').doc(uuid).get();
       if (userDoc.exists) {
@@ -27,7 +27,7 @@ class FirebaseProfileRepo implements ProfileRepo {
   }
 
   @override
-  Future<void> updateProfileUser(ProfileUser user) async {
+  Future<void> updateProfile(ProfileUser user) async {
     try {
       await _firestore.collection('users').doc(user.uuid).update({
         'bio': user.bio,

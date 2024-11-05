@@ -10,7 +10,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   Future<void> getUserProfile(String uuid) async {
     try {
       emit(ProfileLoading());
-      final profileUser = await profileRepo.getProfileUser(uuid);
+      final profileUser = await profileRepo.fetchUserProfile(uuid);
       if (profileUser != null) {
         emit(ProfileLoaded(user: profileUser));
       } else {
@@ -25,10 +25,10 @@ class ProfileCubit extends Cubit<ProfileState> {
   Future<void> updateProfile({required String uuid, String? newBio}) async {
     emit(ProfileLoading());
     try {
-      final currentUser = await profileRepo.getProfileUser(uuid);
+      final currentUser = await profileRepo.fetchUserProfile(uuid);
       final updatedProfile = currentUser?.copyWith(newBio: newBio);
       //update in repo
-      await profileRepo.updateProfileUser(updatedProfile!);
+      await profileRepo.updateProfile(updatedProfile!);
 
       await getUserProfile(uuid);
     } catch (e) {
