@@ -37,6 +37,47 @@ class _ProfilePageState extends State<ProfilePage> {
               title: Text(user.name),
               foregroundColor: Theme.of(context).colorScheme.primary,
             ),
+            body: Center(
+              child: Column(
+                children: [
+                  Text(
+                    user.email,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  //Profile image
+                  Container(
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.secondary,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      height: 120,
+                      width: 120,
+                      padding: const EdgeInsets.all(25),
+                      child: Center(
+                        child: Icon(
+                          Icons.person,
+                          size: 72,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      )),
+
+                  Text(
+                    user.bio,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            ),
           );
         } else if (state is ProfileLoading) {
           return const Scaffold(
