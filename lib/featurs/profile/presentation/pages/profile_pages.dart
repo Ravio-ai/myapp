@@ -31,9 +31,10 @@ class _ProfilePageState extends State<ProfilePage> {
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
         if (state is ProfileLoaded) {
+          final user = state.user;
           return Scaffold(
             appBar: AppBar(
-              title: Text(user!.email),
+              title: Text(user.name),
               foregroundColor: Theme.of(context).colorScheme.primary,
             ),
           );
