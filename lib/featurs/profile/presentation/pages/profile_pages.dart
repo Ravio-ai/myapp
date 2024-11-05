@@ -38,52 +38,64 @@ class _ProfilePageState extends State<ProfilePage> {
               title: Text(user.name),
               foregroundColor: Theme.of(context).colorScheme.primary,
             ),
-            body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Center(
-                child: Column(
-                  children: [
-                    Text(
-                      user.email,
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
+            body: Column(
+              children: [
+                Text(
+                  user.email,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                //Profile image
+                Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  height: 120,
+                  width: 120,
+                  padding: const EdgeInsets.all(25),
+                  child: Center(
+                    child: Icon(
+                      Icons.person,
+                      size: 72,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    //Profile image
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.secondary,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      height: 120,
-                      width: 120,
-                      padding: const EdgeInsets.all(25),
-                      child: Center(
-                        child: Icon(
-                          Icons.person,
-                          size: 72,
+                  ),
+                ),
+                const SizedBox(height: 25),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Bio",
+                        style: TextStyle(
                           color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 25),
-                    Row(
-                      children: [
-                        Text(
-                          "Bio",
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                        ),
-                      ],
-                    ),
-                    BioBox(text: user.bio)
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+                const SizedBox(height: 10),
+                BioBox(text: user.bio),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25.0, top: 25.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Post",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           );
         } else if (state is ProfileLoading) {

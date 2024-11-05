@@ -7,6 +7,7 @@ class BioBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondary,
