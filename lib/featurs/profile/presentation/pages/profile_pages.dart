@@ -4,7 +4,8 @@ import 'package:myapp/featurs/auth/domain/entities/app_user.dart';
 import 'package:myapp/featurs/auth/presentation/cubits/auth_cubit.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  final String uuid;
+  const ProfilePage({super.key, required this.uuid});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
