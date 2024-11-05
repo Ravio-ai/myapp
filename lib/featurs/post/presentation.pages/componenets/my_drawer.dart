@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/featurs/auth/presentation/cubits/auth_cubit.dart';
 import 'package:myapp/featurs/post/presentation.pages/componenets/my_drawer_tile.dart';
+import 'package:myapp/featurs/profile/presentation/pages/profile_pages.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -39,7 +38,15 @@ class MyDrawer extends StatelessWidget {
               MyDrawerTile(
                 title: "P R O F I L E",
                 icon: Icons.person_pin_rounded,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfilePage(),
+                    ),
+                  );
+                },
               ),
               MyDrawerTile(
                 title: "S E A R C H",
