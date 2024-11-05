@@ -1,10 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:myapp/featurs/profile/data/firebase_profile_repo.dart';
 import 'package:myapp/featurs/profile/domain/repos/profile_repo.dart';
 import 'package:myapp/featurs/profile/presentation/cubits/profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   final ProfileRepo profileRepo;
-  ProfileCubit(this.profileRepo) : super(ProfileInitial());
+  ProfileCubit({required this.profileRepo}) : super(ProfileInitial());
 
   //get profile user in try catch
   Future<void> getProfileUser(String uuid) async {
