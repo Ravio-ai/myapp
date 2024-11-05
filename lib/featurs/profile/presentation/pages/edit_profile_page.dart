@@ -46,6 +46,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircularProgressIndicator(),
+                  SizedBox(height: 25),
                   Text(
                     "Loading...",
                   ),
