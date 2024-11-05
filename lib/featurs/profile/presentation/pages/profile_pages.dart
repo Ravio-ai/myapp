@@ -17,12 +17,12 @@ class _ProfilePageState extends State<ProfilePage> {
   late final authCubit = context.read<AuthCubit>();
   late final profileCubit = context.read<ProfileCubit>();
 
-  late AppUser? user = authCubit.currentUser;
+  late AppUser? currentUser = authCubit.currentUser;
   @override
   void initState() {
     super.initState();
     setState(() {
-      profileCubit.getProfileUser(widget.uuid);
+      profileCubit.getUserProfile(widget.uuid);
     });
   }
 

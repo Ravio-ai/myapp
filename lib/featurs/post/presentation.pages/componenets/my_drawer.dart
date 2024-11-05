@@ -42,11 +42,12 @@ class MyDrawer extends StatelessWidget {
                   //get current user
                   Navigator.pop(context);
                   final user = context.read<AuthCubit>().currentUser;
+                  String? uuid = user!.uuid;
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => ProfilePage(
-                        uuid: user!.uuid,
+                        uuid: uuid,
                       ),
                     ),
                   );
